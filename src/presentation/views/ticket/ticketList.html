@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ticket List</title>
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .addToCartButton {
+            background-color: indianred;
+            color: #ffffff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<h1>Ticket List</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Movie Title</th>
+    <th>Validity Date</th>
+    <th>Price</th>
+    <th>Genre</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <forEach items="${tickets}" var="ticket">
+    <tr>
+      <td>${ticket.id}</td>
+      <td>${ticket.movieTitle}</td>
+      <td>${ticket.validityDate}</td>
+      <td>${ticket.price}</td>
+      <td>${ticket.genre}</td>
+      <td>
+        <form action="addToCart" method="POST">
+          <input type="hidden" name="ticketId" value="${ticket.id}">
+          <input type="submit" value="Add to Cart" class="addToCartButton">
+        </form>
+      </td>
+    </tr>
+  </forEach>
+  </tbody>
+</table>
+</body>
+</html>

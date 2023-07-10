@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333333;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 3px;
+            border: 1px solid #cccccc;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: indianred;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<h1>Ticket Form</h1>
+
+<form action="submitTicket" method="POST">
+    <label for="movieTitle">Movie Title:</label>
+    <input type="text" id="movieTitle" name="movieTitle" required>
+
+    <label for="validityDate">Validity Date:</label>
+    <input type="date" id="validityDate" name="validityDate" required>
+
+    <label for="price">Price:</label>
+    <input type="number" step="0.01" id="price" name="price" required>
+
+    <label for="genre">Genre:</label>
+    <select id="genre" name="genre">
+        <option value="comedy">Comedy</option>
+        <option value="drama">Drama</option>
+        <option value="action">Action</option>
+        <!-- Add more genre options here -->
+    </select>
+
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

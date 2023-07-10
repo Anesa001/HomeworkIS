@@ -1,0 +1,15 @@
+<dependencies>
+    <!-- Apache POI - Core -->
+    <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi</artifactId>
+        <version>5.0.0</version>
+    </dependency>
+
+    <!-- Apache POI - OOXML (for .xlsx files) -->
+    <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi-ooxml</artifactId>
+        <version>5.0.0</version>
+    </dependency>
+</dependencies>
